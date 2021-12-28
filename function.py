@@ -34,15 +34,14 @@ def time_sync(url):
     else:
         return False
 
-
 def target_url_open(target_time, target_url):
     global flag
     flag = threading.Event()
-    
+
     while(not flag.is_set()):
         if(time.strftime('%H:%M') == target_time):
             webbrowser.open(target_url)
             break
         
-        time.sleep(0.05)
+        time.sleep(0.02)
         print(time.strftime('%H:%M:%S'))

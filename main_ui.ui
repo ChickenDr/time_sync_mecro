@@ -18,9 +18,12 @@
     <rect>
      <x>10</x>
      <y>130</y>
-     <width>81</width>
+     <width>171</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
    <property name="displayFormat">
     <string>hh:mm</string>
@@ -121,19 +124,6 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="domain">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>20</y>
-     <width>111</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QPushButton" name="detail">
    <property name="geometry">
     <rect>
@@ -152,7 +142,7 @@
     <rect>
      <x>270</x>
      <y>10</y>
-     <width>121</width>
+     <width>120</width>
      <height>191</height>
     </rect>
    </property>
