@@ -1,10 +1,12 @@
 import sys
+import os
 import function
 import threading
+import ui
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 
-form_class = uic.loadUiType("./main_ui.ui")[0]
+form_class = ui.Ui_KHS
 
 class WindowClass(QMainWindow, form_class):
     def __init__(self):
@@ -39,12 +41,19 @@ class WindowClass(QMainWindow, form_class):
                 sync_time_mecro.start()
 
         except:
-            return False
+            self.stat.clear()
+            self.stat.append("권한이 없거나 에러 입니다.")
+            return
 
     def cancle_connected(self):
-        self.open_url.clear()
-        self.target_domain.clear()
-        function.flag.set()
+        self.stat.clear()
+        try:
+            self.target_domain.clear()
+            self.open_url.clear()
+            function.flag.set()
+        except:
+            self.stat.append("작업이 진행 중 이지 않습니다.")
+            return
 
     # 상태 창
     def set_text(self, ip):
